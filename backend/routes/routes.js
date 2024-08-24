@@ -14,14 +14,10 @@ router.get("/:id", controller.getWorkout);
 router.post("/", controller.createWorkout);
 
 //delete workout
-router.delete("/:id", (req, res) => {
-  res.json({ message: "Delete a workout" });
-});
+router.delete("/:id", controller.deleteWorkout);
 
 //update a workout
-router.patch("/:id", (req, res) => {
-  res.json({ message: "Update a workout" });
-});
+router.patch("/:id", controller.updateWorkout);
 
 
 
