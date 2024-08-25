@@ -1,25 +1,29 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 import { Link } from "react-router-dom";
 
 import WorkoutLister from "../components/WorkoutLister";
 import WorkoutAdd from "../components/WorkoutAdd";
 
 const Home = () => {
-  const [workouts, setWorkouts] = useState(null);
+  // const [workouts, setWorkouts] = useState(null);
+
+  const { workouts, dispatch } = useWorkoutsContext();
 
   useEffect(() => {
     const fetchWorkouts = async () => {
       const response = await fetch("/api/workouts");
       const json = await response.json();
+      console.log(json);
 
       if (response.ok) {
-        setWorkouts(json);
-        console.log(json);
+        console.log("updated");
+        dispatch({ type: "SET_WORKOUTS", payload: json });
       }
     };
 
     fetchWorkouts();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="Home">
@@ -27,9 +31,10 @@ const Home = () => {
       <div className="workouts">
         {workouts &&
           workouts.map((workout) => (
-            <WorkoutLister key={workout._id} workout={workout} />
+           <WorkoutLister key={workout._id} workout={workout} />
           ))}
         <WorkoutAdd />
+
         {!workouts && (
           <h2 className="NoWorkouts">
             {" "}
