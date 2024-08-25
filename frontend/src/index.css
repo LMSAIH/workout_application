@@ -152,10 +152,6 @@ nav,
   z-index: 4;
 }
 
-.workout:hover:after {
-  transform: translateX(0.15rem)
-}
-
 .workoutname {
   color: var(--color);
   padding: 0.65rem 0.25rem 0.4rem 1.25rem;
@@ -166,21 +162,22 @@ nav,
   margin:0;
 }
 
-.workout:hover .workoutname {
-  transform: translateX(0.15rem);
-}
-
-.workout:hover .workoutContent{
-  transform: translateX(0.15rem);
-}
-
 .workoutContent{
   padding: 0 0.25rem 0.4rem 1.25rem;
   transition: transform 300ms ease;
 }
 
-.workout:hover .workoutbody {
-  transform: translateX(0.25rem)
+.trash{
+  position:absolute;
+  z-index:100;
+  top:80%;
+  left:90%;
+}
+
+.trash:hover{
+
+  fill:red;
+  
 }
 
 .leftglow,
@@ -247,6 +244,8 @@ nav,
   transition:0.25s;
 }
 
+
+
 .formContent input{
   border-radius:10px;
   font-size:large;
@@ -275,3 +274,6 @@ nav,
 
 }
 
+.inpError{
+  border-color:Red;
+}
