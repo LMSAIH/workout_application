@@ -176,6 +176,7 @@ nav,
 
 .trash:hover{
 
+  cursor:pointer;
   fill:red;
   
 }
