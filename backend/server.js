@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const routes = require("./routes/routes");
+const userRoutes = require('./routes/user');
 
 app.use(express.json());
 app.use((req, res, next) => {
@@ -11,6 +12,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/api/workouts", routes);
+app.use("/api/user", userRoutes);
 
 mongoose
   .connect(process.env.DB_URI)
