@@ -1,7 +1,5 @@
 import { useEffect } from "react";
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
-import { Link } from "react-router-dom";
-
 import WorkoutLister from "../components/WorkoutLister";
 import WorkoutAdd from "../components/WorkoutAdd";
 
@@ -35,13 +33,6 @@ const Home = () => {
           ))}
         <WorkoutAdd />
 
-        {!workouts && (
-          <h2 className="NoWorkouts">
-            {" "}
-            This seems to be empty... Let's get to work{" "}
-            <Link to="/AddNew"> add a workout! </Link>
-          </h2>
-        )}
       </div>
     </div>
   );
