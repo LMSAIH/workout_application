@@ -278,3 +278,50 @@ nav,
 .inpError{
   border-color:Red;
 }
+
+.loginwrapper, .signupwrapper{
+  width:fit-content;
+  margin:auto;
+  margin-top:10%;
+  border-radius: 0px;
+  background: #ffffff;
+  box-shadow:  6px 6px 18px #7d7d7d,
+               -6px -6px 18px #ffffff;
+             padding: 6% 5% 7% 5%;
+}
+
+.login, .signup{
+  display:flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.login label, .signup label{
+  font-family: 'roboto';
+  font-size: large;
+}
+
+.login input, .signup input{
+  font-family: 'roboto';
+  font-size:larger;
+}
+
+.login button, .signup button{
+  margin-top:20%;
+  padding:1%;
+  border-style:solid;
+  border-color:black;
+  background-color:white;
+  border-radius:0;
+  font-family: 'roboto';
+  font-size:large;
+  transition:0.25s;
+
+}
+
+
+.login button:hover, .signup button:hover{
+  border-color:rgb(74, 71, 71);
+  background-color: black;
+  color:white;
+}
