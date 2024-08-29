@@ -32,7 +32,7 @@ const getWorkout = async (req,res) =>{
 
 const createWorkout = async (req,res) =>{
 
-    const {title, load, reps} = req.body;
+    const {title, load, reps, day} = req.body;
 
     let emptyFields = [];
 
@@ -44,6 +44,9 @@ const createWorkout = async (req,res) =>{
     }
     if(!reps){
         emptyFields.push('reps');
+    }
+    if(!day){
+        emptyFields.push('day');
     }
 
     if(emptyFields.length>0){
@@ -59,6 +62,7 @@ const createWorkout = async (req,res) =>{
             load: load,
             reps: reps,
             user_id: user_id,
+            day: day,
         })
 
         res.status(200).json({workout});
