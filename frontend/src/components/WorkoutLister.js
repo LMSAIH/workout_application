@@ -1,5 +1,6 @@
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 import { useAuthContext } from "../hooks/useAuthContext";
+import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 const WorkoutLister = ({ workout }) => {
 
   const { user } = useAuthContext();
@@ -35,6 +36,7 @@ const WorkoutLister = ({ workout }) => {
       <div className="workoutContent">
         <p> {workout.reps} repetitions</p>
         <p> {workout.load} kg </p>
+        <p> {formatDistanceToNow(new Date(workout.createdAt), { addSuffix: true })}</p>
         <div className="svgContainer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
