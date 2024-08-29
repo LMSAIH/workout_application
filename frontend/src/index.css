@@ -3,12 +3,22 @@
 body {
   margin: 0;
   background-color: #F5F7F8;
+  overflow-x: hidden;
 }
 
 .logo {
   width: 8%;
-  
 
+}
+
+.top {
+  justify-content: center;
+  display:flex;
+  flex-direction: row;
+}
+
+.top svg{
+  width:5%;
 }
 
 header {
@@ -20,7 +30,7 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.18);
   padding-bottom: 2%;
   border-radius: 10px;
-  width:100vw;
+  width: 100vw;
 
 }
 
@@ -41,23 +51,23 @@ nav,
   margin-right: 5%;
 }
 
-nav a{
-  display:flex;
+nav a {
+  display: flex;
   flex-direction: row;
 
 }
 
-nav a svg{
-  margin-top:0;
-  margin-left:10%;
-  width:3rem;
-  height:3rem;
-  transition:0.5s;
+nav a svg {
+  margin-top: 0;
+  margin-left: 10%;
+  width: 3rem;
+  height: 3rem;
+  transition: 0.5s;
 }
 
-.user p{
+.user p {
   font-family: 'roboto';
-  font-size:larger;
+  font-size: larger;
 }
 
 .logoContainer {
@@ -73,7 +83,7 @@ nav a svg{
 
 }
 
-.linkList li a{
+.linkList li a {
   font-size: x-large;
 }
 
@@ -99,7 +109,7 @@ nav a svg{
 
 .linkList a {
   font-family: 'roboto';
- 
+
   text-decoration: none;
   color: black;
   font-size: large;
@@ -110,8 +120,8 @@ nav a svg{
   transform: translateY(-5px);
 }
 
-.linkList li:hover svg{
-  fill:rgb(49, 82, 229);
+.linkList li:hover svg {
+  fill: rgb(49, 82, 229);
 }
 
 .linkList .active a {
@@ -136,11 +146,47 @@ nav a svg{
 
 }
 
-.workouts {
+.workoutDays {
+  width: 100%;
+
+}
+
+.dayWrapper {
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  row-gap:30px;
+  row-gap: 30px;
+  transition: 0.5s;
+  
+
+}
+
+.open{
+  max-height: fit-content;
+  padding-top:3%;
+  padding-bottom:3%;
+
+}
+.closed{
+  max-height: 0;
+  overflow:hidden;
+}
+
+.dayName {
+
+  font-family: 'roboto';
+  padding-top:0.5%;
+  padding-bottom:1%;
+  margin:0;
+ width:100%;
+  text-align: center;
+  color:#32a6ff;
+  border-radius: 4px;
+  background: #ffffff;
+  box-shadow:  8px 8px 16px #5a5a5a,
+               -8px -8px 16px #ffffff;
+  
 }
 
 .workout {
@@ -150,19 +196,19 @@ nav a svg{
   position: relative;
   width: 18rem;
   height: fit-content;
-  background: rgba( 255, 255, 255, 0.25 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 20px );
-  -webkit-backdrop-filter: blur( 20px );
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 1rem;
   overflow: hidden;
   font-family: 'roboto';
   font-size: 16px;
   --gradient: linear-gradient(to bottom, #2eadff, #3d83ff, #7e61ff);
   --color: #32a6ff;
-  margin-right:3%;
+  margin-right: 3%;
 }
 
 .workout:before {
@@ -190,26 +236,26 @@ nav a svg{
   font-size: 1.1rem;
   transition: transform 300ms ease;
   z-index: 5;
-  margin:0;
+  margin: 0;
 }
 
-.workoutContent{
+.workoutContent {
   padding: 0 0.25rem 0.4rem 1.25rem;
   transition: transform 300ms ease;
 }
 
-.trash{
-  position:absolute;
-  z-index:100;
-  top:80%;
-  left:90%;
+.trash {
+  position: absolute;
+  z-index: 100;
+  top: 80%;
+  left: 90%;
 }
 
-.trash:hover{
+.trash:hover {
 
-  cursor:pointer;
-  fill:red;
-  
+  cursor: pointer;
+  fill: red;
+
 }
 
 .leftglow,
@@ -235,160 +281,168 @@ nav a svg{
   opacity: 0.1
 }
 
-.addWorkout{
+.addWorkout {
   width: fit-content;
   height: fit-content;
-  background: rgba( 255, 255, 255, 0.25 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 20px );
-  -webkit-backdrop-filter: blur( 20px );
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 1rem;
   font-family: 'roboto';
 }
-.newWorkout{
-  display:flex;
+
+.newWorkout {
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 
 }
 
-.newWorkout .formContent{
+.newWorkout .formContent {
   text-align: center;
-  padding:1.4rem;
-  display:flex;
+  padding: 1.4rem;
+  display: flex;
   flex-direction: column;
   font-family: 'roboto';
 
 }
 
-.newWorkout .formContent h3{
-  margin-top:0;
+.newWorkout .formContent h3 {
+  margin-top: 0;
 
   color: #32a6ff;
 }
 
-.newWorkout button{
-  border:none;
+.newWorkout button {
+  border: none;
   border-radius: 10px;
-  background: rgba( 255, 255, 255, 0.25 );
-  transition:0.25s;
+  background: rgba(255, 255, 255, 0.25);
+  transition: 0.25s;
 }
 
 
 
-.formContent input{
-  border-radius:10px;
-  font-size:large;
-  padding:2px;
+.formContent input {
+  border-radius: 10px;
+  font-size: large;
+  padding: 2px;
 }
 
 
 
-.newWorkout button:hover{
-  background-color:lightgreen;
-  
+.newWorkout button:hover {
+  background-color: lightgreen;
+
 }
 
-.error{
-  position:absolute;
-  left:0;
-  top:100%;
-  background-color:rgb(240, 107, 107);
-  border-style:solid;
+.error {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: rgb(240, 107, 107);
+  border-style: solid;
   border-color: rgb(114, 0, 0);
-  padding:1%;
+  padding: 1%;
   transform: translateY(10%);
   border-radius: 10px;
-  color:black;
+  color: black;
   font-family: 'roboto';
 
 }
 
-.inpError{
-  border-color:Red;
+.inpError {
+  border-color: Red;
 }
 
-.loginwrapper, .signupwrapper{
-  width:fit-content;
-  margin:auto;
-  margin-top:5%;
+.loginwrapper,
+.signupwrapper {
+  width: fit-content;
+  margin: auto;
+  margin-top: 5%;
   border-radius: 0px;
   background: #ffffff;
-  box-shadow:  6px 6px 18px #7d7d7d,
-               -6px -6px 18px #ffffff;
-             padding: 6% 5% 7% 5%;
+  box-shadow: 6px 6px 18px #7d7d7d,
+    -6px -6px 18px #ffffff;
+  padding: 6% 5% 7% 5%;
 }
 
-.login, .signup{
-  display:flex;
+.login,
+.signup {
+  display: flex;
   flex-direction: column;
   row-gap: 10px;
 }
 
-.login label, .signup label{
+.login label,
+.signup label {
   font-family: 'roboto';
   font-size: large;
 }
 
-.login input, .signup input{
+.login input,
+.signup input {
   font-family: 'roboto';
-  font-size:larger;
+  font-size: larger;
 }
 
-.login button, .signup button{
-  margin-top:20%;
-  padding:1%;
-  border-style:solid;
-  border-color:black;
-  background-color:white;
-  border-radius:0;
+.login button,
+.signup button {
+  margin-top: 20%;
+  padding: 1%;
+  border-style: solid;
+  border-color: black;
+  background-color: white;
+  border-radius: 0;
   font-family: 'roboto';
-  font-size:large;
-  transition:0.25s;
+  font-size: large;
+  transition: 0.25s;
 
 }
 
 
-.login button:hover, .signup button:hover{
-  border-color:rgb(74, 71, 71);
+.login button:hover,
+.signup button:hover {
+  border-color: rgb(74, 71, 71);
   background-color: black;
-  color:white;
+  color: white;
 }
 
-.login h1, .signup h1{
+.login h1,
+.signup h1 {
   font-family: 'roboto';
 
 }
 
-.LoginError{
-  width:40ch;
-  text-align:center;
-  background-color:lightcoral;
-  font-size:large;
+.LoginError {
+  width: 40ch;
+  text-align: center;
+  background-color: lightcoral;
+  font-size: large;
   font-family: 'roboto';
-  margin-top:5%;
-  padding-top:5px;
-  padding-bottom:5px;
-  border-style:solid;
+  margin-top: 5%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-style: solid;
 }
 
-.logout{
-  margin-left:5vw;
-}
-.logout svg{
-  width:2.5rem;
-  height:2.5rem;
-  transition:0.5s;
+.logout {
+  margin-left: 5vw;
 }
 
-.logout svg:hover{
-  fill:red;
+.logout svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  transition: 0.5s;
 }
 
-.userActionsWrapper{
-  display:flex;
+.logout svg:hover {
+  fill: red;
+}
+
+.userActionsWrapper {
+  display: flex;
   flex-direction: row;
 }
-
