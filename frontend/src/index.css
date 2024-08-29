@@ -6,7 +6,9 @@ body {
 }
 
 .logo {
-  width: 5%;
+  width: 8%;
+  
+
 }
 
 header {
@@ -51,6 +53,11 @@ nav a svg{
   width:3rem;
   height:3rem;
   transition:0.5s;
+}
+
+.user p{
+  font-family: 'roboto';
+  font-size:larger;
 }
 
 .logoContainer {
@@ -368,7 +375,7 @@ nav a svg{
 }
 
 .logout{
-  margin-left:5%;
+  margin-left:5vw;
 }
 .logout svg{
   width:2.5rem;
@@ -378,5 +385,10 @@ nav a svg{
 
 .logout svg:hover{
   fill:red;
+}
+
+.userActionsWrapper{
+  display:flex;
+  flex-direction: row;
 }
 
