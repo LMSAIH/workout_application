@@ -39,6 +39,20 @@ nav,
   margin-right: 5%;
 }
 
+nav a{
+  display:flex;
+  flex-direction: row;
+
+}
+
+nav a svg{
+  margin-top:0;
+  margin-left:10%;
+  width:3rem;
+  height:3rem;
+  transition:0.5s;
+}
+
 .logoContainer {
   width: fit-content;
 }
@@ -52,10 +66,15 @@ nav,
 
 }
 
+.linkList li a{
+  font-size: x-large;
+}
+
 .links {
   width: fit-content;
   margin-top: auto;
   margin-bottom: auto;
+
 }
 
 .linkList {
@@ -73,6 +92,7 @@ nav,
 
 .linkList a {
   font-family: 'roboto';
+ 
   text-decoration: none;
   color: black;
   font-size: large;
@@ -81,6 +101,10 @@ nav,
 
 .linkList li:hover {
   transform: translateY(-5px);
+}
+
+.linkList li:hover svg{
+  fill:rgb(49, 82, 229);
 }
 
 .linkList .active a {
@@ -282,7 +306,7 @@ nav,
 .loginwrapper, .signupwrapper{
   width:fit-content;
   margin:auto;
-  margin-top:10%;
+  margin-top:5%;
   border-radius: 0px;
   background: #ffffff;
   box-shadow:  6px 6px 18px #7d7d7d,
@@ -325,3 +349,34 @@ nav,
   background-color: black;
   color:white;
 }
+
+.login h1, .signup h1{
+  font-family: 'roboto';
+
+}
+
+.LoginError{
+  width:40ch;
+  text-align:center;
+  background-color:lightcoral;
+  font-size:large;
+  font-family: 'roboto';
+  margin-top:5%;
+  padding-top:5px;
+  padding-bottom:5px;
+  border-style:solid;
+}
+
+.logout{
+  margin-left:5%;
+}
+.logout svg{
+  width:2.5rem;
+  height:2.5rem;
+  transition:0.5s;
+}
+
+.logout svg:hover{
+  fill:red;
+}
+
