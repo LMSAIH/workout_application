@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 import AddImg from '../images/add.svg';
 
 const WorkoutAdd = () => {
@@ -10,9 +11,15 @@ const WorkoutAdd = () => {
   const [load, setLoad] = useState("")
   const [error, setError] = useState(null)
   const [emptyFields, setEmptyFields] = useState([])
-
+  const {user} = useAuthContext();
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if(!user){
+      setError('You must be logged in');
+      return
+    }
     const workout = {
       title: title,
       reps: reps,
@@ -24,6 +31,7 @@ const WorkoutAdd = () => {
       body: JSON.stringify(workout),
       headers: {
         "Content-type": "application/json",
+        'Authorization': `Bearer ${user.token}`
       },
     });
 
