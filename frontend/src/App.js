@@ -18,7 +18,7 @@ function App() {
           <Routes>
             <Route path = "/" element={user ? <Home /> : <Navigate to='/login' />} />
             <Route path = "/signup" element={<SignUp />}/>
-            <Route path = '/login' element={<LogIn />} />
+            <Route path = '/login' element={user ? <Navigate to='/'/> : <LogIn /> } />
             <Route path= "*" element = {<NotFound />} />
           </Routes>
         </div>
