@@ -3,7 +3,7 @@ import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 import AddImg from '../images/add.svg';
 
-const WorkoutAdd = () => {
+const WorkoutAdd = (day) => {
 
   const { dispatch } = useWorkoutsContext()
   const [title, setTitle] = useState("")
@@ -24,6 +24,7 @@ const WorkoutAdd = () => {
       title: title,
       reps: reps,
       load: load,
+      day: day.day,
     };
 
     const response = await fetch("/api/workouts", {
@@ -38,6 +39,7 @@ const WorkoutAdd = () => {
     const json = await response.json();
     console.log(json);
     if (!response.ok) {
+   
       setError(json.error);
       setEmptyFields(json.emptyFields)
     }
@@ -86,6 +88,7 @@ const WorkoutAdd = () => {
             }}
             className = {emptyFields.includes('load') ? 'inpError' : ''}
           ></input>
+          <input type="hidden" value={day.day}></input>
         </div>
         <button className = "add" ><img src = {AddImg} alt = "addimg"></img> </button>
         {error && <div className="error"> {error} </div>}
