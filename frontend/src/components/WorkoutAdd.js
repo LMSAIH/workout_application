@@ -3,6 +3,7 @@ import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 import AddImg from '../images/add.svg';
 
+//Add a workout
 const WorkoutAdd = (day) => {
 
   const { dispatch } = useWorkoutsContext()
