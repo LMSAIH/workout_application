@@ -3,6 +3,8 @@ import logo from "../images/exercise-svgrepo-com.svg";
 import { useLogout } from "../hooks/useLogOut";
 import { useAuthContext } from "../hooks/useAuthContext";
 const NavBar = () => {
+
+  //handle states for the current active 
   const location = useLocation();
   const { logout } = useLogout();
   const { user } = useAuthContext();
