@@ -28,6 +28,7 @@ const WorkoutAdd = (day) => {
       day: day.day,
     };
 
+    //call to the API by using the bearer token for authorized users 
     const response = await fetch("/api/workouts", {
       method: "POST",
       body: JSON.stringify(workout),
