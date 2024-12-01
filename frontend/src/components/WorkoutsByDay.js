@@ -1,4 +1,6 @@
 import { useRef, useState } from "react";
+
+//state manager for the workouts and their filters
 const WorkoutDays = ({children, day}) => {
 
     const dayWrapperRef = useRef(null);
