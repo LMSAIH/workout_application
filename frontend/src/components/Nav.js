@@ -9,6 +9,7 @@ const NavBar = () => {
   const { logout } = useLogout();
   const { user } = useAuthContext();
 
+  //invocation
   const handleLogout = () => {
     logout();
   };
