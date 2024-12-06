@@ -3,6 +3,8 @@ import { useAuthContext } from './useAuthContext';
 import { useNavigate } from 'react-router-dom';
 
 export const useSignUp = () => {
+
+    //error state management
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(null);
     const { dispatch } = useAuthContext();
