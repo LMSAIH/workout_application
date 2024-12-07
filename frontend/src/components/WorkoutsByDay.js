@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 //state manager for the workouts and their filters
 const WorkoutDays = ({children, day}) => {
 
-  //wrapper
+  //wrapper for the days
     const dayWrapperRef = useRef(null);
     const [isOpen, setIsOpen] = useState(false);
  
