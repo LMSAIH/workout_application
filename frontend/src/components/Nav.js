@@ -14,6 +14,8 @@ const NavBar = () => {
     logout();
   };
 
+  
+  //updated containers
   return (
     <header>
       <nav>
