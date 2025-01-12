@@ -15,7 +15,7 @@ const NavBar = () => {
   };
 
   
-  //updated containers
+  //updated containers for reference
   return (
     <header>
       <nav>
